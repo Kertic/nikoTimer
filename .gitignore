@@ -1,6 +1,25 @@
+#Directiories to ignore
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ee]xportedObj/
+[Bb]uild/
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
+
+#Visual Studio items
+*.svd
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
 
 # Folder config file
 Desktop.ini
@@ -45,3 +64,11 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+Library
+ProjectSettings
+*.csproj
+*.csproj
+*.csproj
+*.sln
+*.suo
