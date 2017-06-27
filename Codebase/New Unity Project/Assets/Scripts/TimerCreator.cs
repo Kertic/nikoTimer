@@ -40,7 +40,21 @@ public class TimerCreator : MonoBehaviour {
     {
         if (isMinutes)
         {
-            int totalTime = int.Parse(SecondsTimer.NumbersOnlyTextField.text) + int.Parse(NumbersOnlyTextField.text) * 60;
+            int tempMinutes = 0;
+            int tempSeconds = 0;
+
+            #region Error checking for null input in the input boxes
+
+            //Minutes 
+            if(NumbersOnlyTextField.text.Length > 0)
+            tempMinutes =  int.Parse(NumbersOnlyTextField.text) * 60;
+            //Seconds
+            if(SecondsTimer.NumbersOnlyTextField.text.Length > 0)
+            tempSeconds = int.Parse(SecondsTimer.NumbersOnlyTextField.text);
+
+            #endregion
+
+            int totalTime = tempSeconds + tempMinutes;
             timerToSet.SetUpTimer(totalTime);
             
         }

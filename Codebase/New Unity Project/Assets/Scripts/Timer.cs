@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour
     bool isTicking;
     [SerializeField]
     Text timerText;
+    public Color TextColor;
 
     float timeCount;//This is used to keep track of time until it hits 1, and then we subtract 1 from seconds remaining
     
@@ -62,6 +63,7 @@ public class Timer : MonoBehaviour
     public void TurnOnTimer()
     {
         isTicking = true;
+        timerText.color = TextColor;
     }
 
     /// <summary>
@@ -71,6 +73,7 @@ public class Timer : MonoBehaviour
     {
         isTicking = false;
         secondsRemaining = maxSeconds;
+        GlobalFunctions.Notify();
     }
 
     /// <summary>
