@@ -23,6 +23,8 @@ public class Timer : MonoBehaviour
     {
         isTicking = false;
         secondsRemaining = maxSeconds;
+        //Put this here cause there are no other objects to start with.
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
     }
 
@@ -39,18 +41,17 @@ public class Timer : MonoBehaviour
             }
             
 
-            if (secondsRemaining < 0)
-            {
-                secondsRemaining = 0;
-                TurnTimerOff();
-            }
+            
 
             int tempMinutes = secondsRemaining / 60;
             int tempSeconds = secondsRemaining - tempMinutes * 60;
             timerText.text = tempMinutes + ":" + tempSeconds;
 
-            if (secondsRemaining == 0)
+            if (secondsRemaining == -1)
+            {
+                TurnTimerOff();
                 nextTimer.TurnOnTimer();//We put this here so that way text is forced to be edited correctly.
+            }
 
             
         }
